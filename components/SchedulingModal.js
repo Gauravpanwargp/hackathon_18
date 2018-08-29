@@ -69,12 +69,12 @@ const colleagueList = [
   {
     name: 'Danielle Vanica',
     avatar_url: require(''),
-    subtitle: ''
+    subtitle: 'Juniorest Engineer'
   },
   {
     name: 'Aditya Vikram',
     avatar_url: require(''),
-    subtite: ''
+    subtite: 'Seniorest Engineer'
   }
 ]
 

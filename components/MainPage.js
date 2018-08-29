@@ -9,7 +9,7 @@ export default class MainPage extends React.Component {
   render() {
     return (
       <View style={{flex:1}}>
-        <AppHeader title="DHI'"/>
+        <AppHeader title="DHI"/>
         <ScrollView>
           <View style={styles.container}>
             <Dashboard/>

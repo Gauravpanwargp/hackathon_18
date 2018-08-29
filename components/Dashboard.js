@@ -41,19 +41,6 @@ export default class Dashboard extends React.Component {
   }
 }
 
-//CARD CONTENT
-const colleagueCardTitle = 'Connect with a Colleague';
-const colleagueCardDescription = 'Meeting new people is great! This option is best for casual discussions or a quick cup of coffee.';
-const mentorCardTitle = 'Connect with a Mentor';
-const mentorCardDescription = 'Need a little career guidance? This option is best for career discussions with leadership from anywhere in the company.';
-const counselorCardTitle = 'Connect with a Counselor';
-const counselorCardDescription = 'For anything from excess stress to major life events, Amex is here for you. Take advantage of our onsite and telephonic counseling benefits - completely free and, of course, confidential. Connect to a counselor today and start feeling better.';
-const ethicsCardTitle = 'Connect with the Ethics Experts';
-const ethicsCardDescription = 'Unsure of what to do about a work situation or need to call something out? Connect anonymously to get the guidance you need.';
-const wellnessCardTitle = 'Connect with a Wellness Coach';
-const wellnessCardDescription = 'Celebrate Healthy Lifestyles! Connect to a Wellness Coach, for free, to get an assessment of your current habits and what you can do to live a healthier, happier life!';
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
