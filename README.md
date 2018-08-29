@@ -12,6 +12,38 @@ Below you'll find information about performing common tasks. The most recent ver
     - [ ] Leadership index
 - [ ] Presentation
 
+## Common issues/steps
+
+- run: ```npm install``` to install dependencies
+- optional-> run: ```npm install -g react-native-scripts```
+- Can get stuck on certain steps so remove proxy if not on Corporate network ```npm config rm proxy``` and ```npm config rm https-proxy```
+- Can get stuck on certain steps so add proxy if on Corporate network ```npm config set proxy <proxy-host>``` and ```npm config set https-proxy <proxy-host>```
+
+## Running the app
+
+- Option 1: Run on browser
+  - create an account on expo.io
+  - go to snack.expo.io
+  - import code from github repository on expo
+  - click on ```Tap to play``` on right side, Voila!
+- Option 2: Run on your phone using expo app as emulator: runs slower compared to Option 3
+  - create an account on expo.io
+  - download the expo app
+  - go to snack.expo.io
+  - import code from github repository on expo
+  - click on ```Run on your device``` on right side, Voila!
+- Option 3: Run on your phone using expo app and downloading native code on your device: runs faster compared to Option 2
+  - create an account on expo.io
+  - download the expo app
+  - clone github repo on your machine
+  - make sure your phone and your machine are on same wifi or wired network
+  - run the app by ```npm start```
+  - look for the line "Your app is now running at URL: exp://10.31.8.61:19000"
+  - use the above url and type in your browser
+  - you should be asked to open the link in your expo app
+  - all the content would be downloaded to your phone and app runs on your phone
+  - click on ```Run on your device``` on right side, Voila!
+
 ## Table of Contents
 
 * [Updating to New Releases](#updating-to-new-releases)
