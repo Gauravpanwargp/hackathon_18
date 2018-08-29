@@ -42,7 +42,6 @@ Below you'll find information about performing common tasks. The most recent ver
   - use the above url and type in your browser
   - you should be asked to open the link in your expo app
   - all the content would be downloaded to your phone and app runs on your phone
-  - click on ```Run on your device``` on right side, Voila!
 
 ## Table of Contents
 
