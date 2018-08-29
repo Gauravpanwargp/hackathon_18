@@ -9,10 +9,13 @@ import Calendar from './Calendar'
 export default class ExecrisePage extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1 }}>
-        <AppHeader title={'Execrise'}/>
+      <View style={{ flex: 1}}>
+        <View style={styles.container}>
+          <AppHeader title={'Activity'}/>
+        </View>
         <Calendar/>
       </View>
+
 
     )
   }
@@ -20,7 +23,6 @@ export default class ExecrisePage extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     paddingLeft: 10,
     paddingRight: 10,
   },

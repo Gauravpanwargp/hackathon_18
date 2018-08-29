@@ -21,7 +21,7 @@ export const Tabs = createBottomTabNavigator({
   Execrise: {
     screen: ExecrisePage,
     navigationOptions: {
-      tabBarLabel: 'Execrise',
+      tabBarLabel: 'Activity',
       tabBarIcon: ({ tintColor }) => (
         <Icon
           name='fitness-center'
