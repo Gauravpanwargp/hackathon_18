@@ -23,7 +23,7 @@ export default class SchedulingModal extends React.Component {
 
               <List containerStyle={{marginBottom: 20}}>
               {
-                colleageList.map((l) => (
+                colleagueList.map((l) => (
                   <ListItem
                     roundAvatar
                     avatar={l.avatar_url}
