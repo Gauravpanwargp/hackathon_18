@@ -5,9 +5,9 @@ import ChatTile from './ChatTile'
 import ExecriseTile from './ExecriseTile'
 import AppHeader from './AppHeader'
 import ConversationCard from './ConversationCard';
-import SchedulingModal from './SchedulingModal';
 import Communications from 'react-native-communications';
 import ConversationPrefsModal from './ConversationPrefsModal';
+import MatchModal from './MatchModal';
 
 export default class ChatPage extends React.Component {
   constructor(props) {
@@ -75,10 +75,10 @@ export default class ChatPage extends React.Component {
 	        </Text>
 	        <ConversationCard title={colleagueCardTitle} text={colleagueCardDescription} image={require('../Media/talktoacolleague.png')} action={() => this.connectToAColleague()}/>
 	        <ConversationPrefsModal showModal={this.state.colleaguePrefsVisible} closeAction={()=> this.setState({colleaguePrefsVisible:false})} confirmAction={()=> this.findMatch()}/>
-          <SchedulingModal isColleagueMatch={true} showModal={this.state.colleagueMatch} closeAction={()=>this.setState({colleagueMatch:false})} />
+          <MatchModal isColleagueMatch={true} showModal={this.state.colleagueMatch} closeAction={()=>this.setState({colleagueMatch:false})} />
 	        <ConversationCard title={mentorCardTitle} text={mentorCardDescription} image={require('../Media/talktoamentor.png')} action={() => this.connectToAMentor()}/>
 	        <ConversationPrefsModal showModal={this.state.mentorPrefsVisible} closeAction={()=> this.setState({mentorPrefsVisible: false})} confirmAction={()=>this.findMatch()}/>
-          <SchedulingModal isColleagueMatch={false} showModal={this.state.mentorMatch} closeAction={()=>this.setSTate({mentorMatch:false})}/>
+          <MatchModal isColleagueMatch={false} showModal={this.state.mentorMatch} closeAction={()=>this.setState({mentorMatch:false})}/>
 	        <ConversationCard title={counselorCardTitle} text={counselorCardDescription} image={require('../Media/talktoacounselor.png')} action={() => this.connectToCounselor()}/>
 	        <ConversationCard title={wellnessCardTitle} text={wellnessCardDescription} image={require('../Media/talktoawellnesscoach.png')} action={() => this.connectToWellness()}/>
 	        <ConversationCard title={ethicsCardTitle} text={ethicsCardDescription} image={require('../Media/talktoethicshotline.png')} action={() => this.connectToEthics()}/>

@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from 'react-navigation'
 import { Icon } from 'react-native-elements'
 import MainPage from '../components/MainPage'
 import ExecrisePage from '../components/ExecrisePage'
-import ChatPage from '../components/ExecrisePage'
+import ChatPage from '../components/ChatPage'
 
 export const Tabs = createBottomTabNavigator({
   Home: {
