@@ -14,7 +14,9 @@ export default class ChatPage extends React.Component {
     super(props);
     this.state = {
       colleaguePrefsVisible : false,
-      mentorPrefsVisible : false
+      mentorPrefsVisible : false,
+      colleagueMatch : false,
+      mentorMatch : false
     }
   }
     connectToEthics() {
@@ -47,6 +49,10 @@ export default class ChatPage extends React.Component {
     connectToAMentor() {
       this.setState({mentorPrefsVisible:true});
     }
+    findMatch() {
+      this.setState({colleaguePrefsVisible:false});
+      this.setState({colleagueMatch:true});
+    }
     connectToWellness(){
       Alert.alert(
         'Speak to a Wellness Coach',
@@ -68,9 +74,11 @@ export default class ChatPage extends React.Component {
 	        Need to talk things out? We're here to help.
 	        </Text>
 	        <ConversationCard title={colleagueCardTitle} text={colleagueCardDescription} image={require('../Media/talktoacolleague.png')} action={() => this.connectToAColleague()}/>
-	        <ConversationPrefsModal showModal={this.state.colleaguePrefsVisible} action={()=> console.log("complete")} />
+	        <ConversationPrefsModal showModal={this.state.colleaguePrefsVisible} closeAction={()=> this.setState({colleaguePrefsVisible:false})} confirmAction={()=> this.findMatch()}/>
+          <SchedulingModal isColleagueMatch={true} showModal={this.state.colleagueMatch} closeAction={()=>this.setState({colleagueMatch:false})} />
 	        <ConversationCard title={mentorCardTitle} text={mentorCardDescription} image={require('../Media/talktoamentor.png')} action={() => this.connectToAMentor()}/>
-	        <ConversationPrefsModal showModal={this.state.mentorPrefsVisible} action={()=> console.log("complete")} />
+	        <ConversationPrefsModal showModal={this.state.mentorPrefsVisible} closeAction={()=> this.setState({mentorPrefsVisible: false})} confirmAction={()=>this.findMatch()}/>
+          <SchedulingModal isColleagueMatch={false} showModal={this.state.mentorMatch} closeAction={()=>this.setSTate({mentorMatch:false})}/>
 	        <ConversationCard title={counselorCardTitle} text={counselorCardDescription} image={require('../Media/talktoacounselor.png')} action={() => this.connectToCounselor()}/>
 	        <ConversationCard title={wellnessCardTitle} text={wellnessCardDescription} image={require('../Media/talktoawellnesscoach.png')} action={() => this.connectToWellness()}/>
 	        <ConversationCard title={ethicsCardTitle} text={ethicsCardDescription} image={require('../Media/talktoethicshotline.png')} action={() => this.connectToEthics()}/>

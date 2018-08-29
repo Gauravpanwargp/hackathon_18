@@ -9,7 +9,8 @@ export default class ConversationPrefsModal extends React.Component {
   //this.props.topics=> interests if colleague, professional topics if
  constructor(props) {
     super(props);
-        this.handleButtonEvent = this.props.action.bind(this);
+        this.closeAction = this.props.closeAction.bind(this);
+        this.confirmAction = this.props.confirmAction.bind(this);
 	      this.state = {
 	        selectedItems: []
       };
@@ -25,9 +26,7 @@ export default class ConversationPrefsModal extends React.Component {
           animationType="slide"
           transparent={false}
           visible={this.props.showModal}
-          onRequestClose={() => {
-            alert('Modal has been closed.');
-          }}>
+          onRequestClose={() => this.closeAction()}>
           <View style={{marginTop: 22, height: 500}}>
               <Text>Hello World!</Text>
                          <MultiSelect
@@ -40,7 +39,6 @@ export default class ConversationPrefsModal extends React.Component {
 			                selectText="Pick Items"
 			                searchInputPlaceholderText="Search Items..."
 			                onChangeInput={ (text)=> console.log(text)}
-			                altFontFamily="ProximaNova-Light"
 			                tagRemoveIconColor="#CCC"
 			                tagBorderColor="#CCC"
 			                tagTextColor="#CCC"
@@ -53,10 +51,10 @@ export default class ConversationPrefsModal extends React.Component {
 			                submitButtonText="Submit"
             />
               <Button
-              onPress={() => this.handleButtonEvent()}
+              onPress={() => this.confirmAction()}
               backgroundColor='#03A9F4'
               buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-              title='CLOSE'/>
+              title='Confirm'/>
           </View>
         </Modal>
    );
