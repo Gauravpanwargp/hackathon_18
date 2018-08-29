@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, ScrollView } from 'react-native';
 import { Card, Button, Divider } from 'react-native-elements'
-import ChatTile from './ChatTile'
-import ExecriseTile from './ExecriseTile'
+import Dashboard from './Dashboard'
 import AppHeader from './AppHeader'
 import Footer from './Footer'
 
@@ -10,11 +9,10 @@ export default class MainPage extends React.Component {
   render() {
     return (
       <View style={{flex:1}}>
-        <AppHeader title="Mental Health"/>
+        <AppHeader title="DHI'"/>
         <ScrollView>
           <View style={styles.container}>
-            <ChatTile/>
-            <ExecriseTile/>
+            <Dashboard/>
           </View>
         </ScrollView>
       </View>
