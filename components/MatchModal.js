@@ -10,30 +10,6 @@ export default class MatchModal extends React.Component {
  constructor(props) {
     super(props);
         this.closeAction = this.props.closeAction.bind(this);
-        this.state = {
-          ColleagueMatches : [
-            {
-              name: 'Gaurav Panwar',
-              avatar_url: require('../Media/People/gp.png'),
-              subtitle: 'Remittances Platform - SE I'
-            },
-            {
-              name: 'Tin Phan',
-              avatar_url: require('../Media/People/tf.png'),
-              subtitle: 'Remittances Platform - Eng I'
-            },
-            {
-              name: 'Danielle Vanica',
-              avatar_url: require('../Media/People/dv.png'),
-              subtitle: 'Remittances Platform - Eng II'
-            },
-            {
-              name: 'Aditya Vikram',
-              avatar_url: require('../Media/People/av.png'),
-              subtitle: 'Remittances Platform - SE I'
-            }
-          ]
-      };
 }
 
 
@@ -45,16 +21,20 @@ export default class MatchModal extends React.Component {
           visible={this.props.showModal}
           onRequestClose={() => this.closeAction()}>
           <View style={{marginTop: 22, height: 500}}>
-              <Text>Hello World!</Text>
+              <Text>Here are your best matches. Please pick one to connect with them.</Text>
               <List containerStyle={{marginBottom: 20}}>
               {
-                this.state.ColleagueMatches.map((l) => (
+                this.props.matchList.map((l) => (
                   <ListItem
                     roundAvatar
                     avatar={l.avatar_url}
                     key={l.name}
                     title={l.name}
                     subtitle={l.subtitle}
+                    onPress={()=>Alert.alert('Connect via Slack', 'Reach out to this person via slack to find some time to meet!',[
+                      {text: 'Nevermind', style: 'cancel'},
+                      {text: l.slack, style:'cancel'}
+                    ], {})}
                   />
                 ))
               }
@@ -63,7 +43,7 @@ export default class MatchModal extends React.Component {
               onPress={() => this.closeAction()}
               backgroundColor='#03A9F4'
               buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-              title='Confirm'/>
+              title='Cancel'/>
           </View>
         </Modal>
    );

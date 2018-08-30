@@ -53,6 +53,10 @@ export default class ChatPage extends React.Component {
       this.setState({colleaguePrefsVisible:false});
       this.setState({colleagueMatch:true});
     }
+    findMentorMatch() {
+      this.setState({mentorPrefsVisible:false});
+      this.setState({mentorMatch:true});
+    }
     connectToWellness(){
       Alert.alert(
         'Speak to a Wellness Coach',
@@ -74,11 +78,11 @@ export default class ChatPage extends React.Component {
 	        Need to talk things out? We're here to help.
 	        </Text>
 	        <ConversationCard title={colleagueCardTitle} text={colleagueCardDescription} image={require('../Media/talktoacolleague.png')} action={() => this.connectToAColleague()}/>
-	        <ConversationPrefsModal showModal={this.state.colleaguePrefsVisible} closeAction={()=> this.setState({colleaguePrefsVisible:false})} confirmAction={()=> this.findMatch()}/>
-          <MatchModal isColleagueMatch={true} showModal={this.state.colleagueMatch} closeAction={()=>this.setState({colleagueMatch:false})} />
+	        <ConversationPrefsModal showModal={this.state.colleaguePrefsVisible} itemList={personalItems} closeAction={()=> this.setState({colleaguePrefsVisible:false})} confirmAction={()=> this.findMatch()}/>
+          <MatchModal matchList={colleagueMatches} showModal={this.state.colleagueMatch} closeAction={()=>this.setState({colleagueMatch:false})} />
 	        <ConversationCard title={mentorCardTitle} text={mentorCardDescription} image={require('../Media/talktoamentor.png')} action={() => this.connectToAMentor()}/>
-	        <ConversationPrefsModal showModal={this.state.mentorPrefsVisible} closeAction={()=> this.setState({mentorPrefsVisible: false})} confirmAction={()=>this.findMatch()}/>
-          <MatchModal isColleagueMatch={false} showModal={this.state.mentorMatch} closeAction={()=>this.setState({mentorMatch:false})}/>
+	        <ConversationPrefsModal showModal={this.state.mentorPrefsVisible} itemList={professionalItems} closeAction={()=> this.setState({mentorPrefsVisible: false})} confirmAction={()=>this.findMentorMatch()}/>
+          <MatchModal matchList={mentorMatches} showModal={this.state.mentorMatch} closeAction={()=>this.setState({mentorMatch:false})}/>
 	        <ConversationCard title={counselorCardTitle} text={counselorCardDescription} image={require('../Media/talktoacounselor.png')} action={() => this.connectToCounselor()}/>
 	        <ConversationCard title={wellnessCardTitle} text={wellnessCardDescription} image={require('../Media/talktoawellnesscoach.png')} action={() => this.connectToWellness()}/>
 	        <ConversationCard title={ethicsCardTitle} text={ethicsCardDescription} image={require('../Media/talktoethicshotline.png')} action={() => this.connectToEthics()}/>
@@ -116,3 +120,123 @@ const styles = StyleSheet.create({
     color: '#34495e',
   },
 });
+
+const personalItems = [{
+    id: '0',
+    name: 'Any Topic',
+  }, {
+    id: '01',
+    name: 'Coffee',
+  },{
+    id: '1',
+    name: 'Sports - Football (American)',
+  }, {
+    id: '2',
+    name: 'Sports - Football (Soccer)',
+  }, {
+    id: '4',
+    name: 'Sports - General',
+  }, {
+    id: '5',
+    name: 'Technology - Cryptocurrencies',
+  }, {
+    id: '6',
+    name: 'Technology - Quantum Computing',
+  }, {
+    id: '7',
+    name: 'Technology - Trends',
+  }, {
+    id: '8',
+    name: 'Technology - General',
+  }, {
+    id: '9',
+    name: 'Outdoors - Hiking/Backpacking',
+  }, {
+    id: '12',
+    name: 'Outdoors - Nature/General',
+  }, {
+    id: '13',
+    name: 'Games - Video Games',
+  }, {
+    id: '14',
+    name: 'Games - D&D',
+  }, {
+    id: '16',
+    name: 'Cars',
+  }];
+
+  const professionalItems = [{
+      id: '0',
+      name: 'Any Topic',
+    }, {
+      id: '01',
+      name: 'Leadership Skills',
+    },{
+      id: '1',
+      name: 'Career Paths',
+    }, {
+      id: '2',
+      name: 'Learn about an Org',
+    }, {
+      id: '4',
+      name: 'Presentation Skills',
+    }, {
+      id: '5',
+      name: 'Networking Strategies',
+    }, {
+      id: '6',
+      name: 'Other',
+    }];
+
+    const colleagueMatches = [
+      {
+        name: 'Gaurav Panwar',
+        avatar_url: require('../Media/People/gp.png'),
+        subtitle: 'Remittances Platform - SE I',
+        slack: '@G_Panwar'
+      },
+      {
+        name: 'Tin Phan',
+        avatar_url: require('../Media/People/tf.png'),
+        subtitle: 'Remittances Platform - Eng I',
+        slack: '@Tin'
+      },
+      {
+        name: 'Danielle Vanica',
+        avatar_url: require('../Media/People/dv.png'),
+        subtitle: 'Remittances Platform - Eng II',
+        slack: '@DanielleVanica'
+      },
+      {
+        name: 'Aditya Vikram',
+        avatar_url: require('../Media/People/av.png'),
+        subtitle: 'Remittances Platform - SE I',
+        slack: '@adityav'
+      },
+      {
+        name: 'Niladri Bhattacharjya',
+        avatar_url: require('../Media/People/nsb.png'),
+        subtitle: 'Remittances Platform - SE II',
+        slack: '@Niladri'
+      }
+    ];
+   const mentorMatches = [
+      {
+        name: 'John F Ryan',
+        avatar_url: require('../Media/People/jr.png'),
+        subtitle: 'Remittances Platform - VP Tech III',
+        slack: '@JohnRyan'
+      },
+      {
+        name: 'Sandeep Bose',
+        avatar_url: require('../Media/People/sb.png'),
+        subtitle: 'IMDP - VP Tech I',
+        slack: '@sandeepbose'
+      },
+      {
+        name: 'Thomas Waldron',
+        avatar_url: require('../Media/People/tw.png'),
+        subtitle: 'Remittances Platform - Eng Director',
+        slack: '@thomas'
+      }
+    ];
