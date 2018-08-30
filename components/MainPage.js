@@ -8,7 +8,7 @@ export default class MainPage extends React.Component {
   render() {
     return (
       <View style={{flex:1}}>
-        <AppHeader title="Dashboard"/>
+        <AppHeader title="DASHBOARD"/>
         <Dashboard/>
       </View>
 

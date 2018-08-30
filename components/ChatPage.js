@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView, Alert } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Alert, Image } from 'react-native';
 import { Card, Button, Divider } from 'react-native-elements'
 import ChatTile from './ChatTile'
 import ExecriseTile from './ExecriseTile'
@@ -72,13 +72,10 @@ export default class ChatPage extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <AppHeader title={'Chat'}/>
+        <AppHeader title={'CONNECT'}/>
 	    <ScrollView>
-	        <Text style={styles.paragraph}>
-	        Need to talk things out? We're here to help.
-	        </Text>
 	        <ConversationCard title={colleagueCardTitle} text={colleagueCardDescription} image={require('../Media/talktoacolleague.png')} action={() => this.connectToAColleague()}/>
-	        <ConversationPrefsModal showModal={this.state.colleaguePrefsVisible} itemList={personalItems} closeAction={()=> this.setState({colleaguePrefsVisible:false})} confirmAction={()=> this.findMatch()}/>
+          <ConversationPrefsModal showModal={this.state.colleaguePrefsVisible} itemList={personalItems} closeAction={()=> this.setState({colleaguePrefsVisible:false})} confirmAction={()=> this.findMatch()}/>
           <MatchModal matchList={colleagueMatches} showModal={this.state.colleagueMatch} closeAction={()=>this.setState({colleagueMatch:false})} />
 	        <ConversationCard title={mentorCardTitle} text={mentorCardDescription} image={require('../Media/talktoamentor.png')} action={() => this.connectToAMentor()}/>
 	        <ConversationPrefsModal showModal={this.state.mentorPrefsVisible} itemList={professionalItems} closeAction={()=> this.setState({mentorPrefsVisible: false})} confirmAction={()=>this.findMentorMatch()}/>
@@ -98,12 +95,12 @@ const colleagueCardTitle = 'Connect with a Colleague';
 const colleagueCardDescription = 'Meeting new people is great! This option is best for casual discussions or a quick cup of coffee.';
 const mentorCardTitle = 'Connect with a Mentor';
 const mentorCardDescription = 'Need a little career guidance? This option is best for career discussions with leadership from anywhere in the company.';
-const counselorCardTitle = 'Connect with a Counselor';
-const counselorCardDescription = 'For anything from excess stress to major life events, Amex is here for you. Take advantage of our onsite and telephonic counseling benefits - completely free and, of course, confidential. Connect to a counselor today and start feeling better.';
-const ethicsCardTitle = 'Connect with the Ethics Experts';
+const counselorCardTitle = 'Counselling Services';
+const counselorCardDescription = 'Take advantage of Amex\'s onsite and telephonic counseling benefits - completely free and, of course, confidential.';
+const ethicsCardTitle = 'Ethics Experts Hotline';
 const ethicsCardDescription = 'Unsure of what to do about a work situation or need to call something out? Connect anonymously to get the guidance you need.';
-const wellnessCardTitle = 'Connect with a Wellness Coach';
-const wellnessCardDescription = 'Celebrate Healthy Lifestyles! Connect to a Wellness Coach, for free, to get an assessment of your current habits and what you can do to live a healthier, happier life!';
+const wellnessCardTitle = 'Wellness Coach Hotline';
+const wellnessCardDescription = 'Celebrate Healthy Lifestyles! Connect to a Wellness Coach, for free, to get an assessment of your current habits and lifestyle!';
 
 
 const styles = StyleSheet.create({

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, Alert, Modal } from 'react-native';
-import {Button, ScrollView} from 'react-native-elements';
+import {Button} from 'react-native-elements';
 import MultiSelect from 'react-native-multiple-select';
 
 export default class ConversationPrefsModal extends React.Component {
@@ -29,7 +29,8 @@ export default class ConversationPrefsModal extends React.Component {
           visible={this.props.showModal}
           onRequestClose={() => this.closeAction()}>
           <View>
-              <Text>Hello World!</Text>
+              <Text>     </Text>
+
                          <MultiSelect
 			                hideTags
 			                items={this.props.itemList}

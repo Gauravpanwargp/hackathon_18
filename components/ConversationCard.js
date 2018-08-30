@@ -11,9 +11,9 @@ export default class ConversationCard extends React.Component {
   handleButtonEvent;
  render() {
    return (
-     <View style={styles.container}>
-     <Card title={this.props.title} image={this.props.image}>
-     <Text style={styles.paragraph}>
+     //<View style={styles.container}>
+/*     <Card title={this.props.title} image={this.props.image} titleStyle={{ fontSize: 19, paddingBottom: 5 }}>
+     <Text style={{ fontSize: 16, color: "gray", paddingBottom: 15 }}>
      {this.props.text}
      </Text>
      <Button
@@ -23,11 +23,21 @@ export default class ConversationCard extends React.Component {
        title='CONNECT NOW'
        onPress={() => this.handleButtonEvent()}
        />
+     </Card>*/
+
+     <Card>
+       <View style={{flexDirection: 'row'}}>
+         <Image
+           style={{width: 85, height: 85}}
+           source={this.props.image}
+         />
+         <Text style={{ fontSize: 19, paddingBottom: 5, textAlign:"right", textAlignVertical:"center" }}>{this.props.title}</Text>
+       </View>
+       <Text>                             </Text>
+       <Text style={{fontSize: 16, color:'gray', paddingBottom: 5}}>{this.props.text}</Text>
      </Card>
 
-
-
-     </View>
+     //</View>
    );
  }
 }
@@ -36,12 +46,5 @@ const styles = StyleSheet.create({
  container: {
    alignItems: 'center',
    justifyContent: 'center',
- },
- paragraph: {
-   margin: 18,
-   marginTop: 0,
-   fontSize: 14,
-   textAlign: 'center',
-   color: '#34495e',
  }
 });

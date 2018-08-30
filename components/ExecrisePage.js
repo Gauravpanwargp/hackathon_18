@@ -11,7 +11,7 @@ export default class ExecrisePage extends React.Component {
     return (
       <View style={{ flex: 1}}>
         <View style={styles.container}>
-          <AppHeader title={'Activity'}/>
+          <AppHeader title={'ACTIVITIES'}/>
         </View>
         <Calendar/>
       </View>

@@ -23,7 +23,7 @@ export const Tabs = createBottomTabNavigator({
   Execrise: {
     screen: ExecrisePage,
     navigationOptions: {
-      tabBarLabel: 'Activity',
+      tabBarLabel: 'Activities',
       tabBarIcon: ({ tintColor }) => (
         <Icon
           name='fitness-center'
@@ -35,7 +35,7 @@ export const Tabs = createBottomTabNavigator({
   Chat: {
     screen: ChatPage,
     navigationOptions: {
-      tabBarLabel: 'Chat',
+      tabBarLabel: 'Connect',
       tabBarIcon: ({ tintColor }) => (
         <Icon
           name='chat'
