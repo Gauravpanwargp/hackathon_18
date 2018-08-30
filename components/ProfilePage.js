@@ -11,6 +11,18 @@ const list = [
     subtitle: 'Susan White'
   },
   {
+    title: 'Location',
+    subtitle: 'AEDR'
+  },
+  {
+    title: 'Activities Preferences',
+    subtitle: 'Ping Pong, Hiking, + 2 Others'
+  },
+  {
+    title: 'Connect Preferences',
+    subtitle: 'Coffee Chat, Sports, + 3 Others'
+  },
+  {
     title: 'Age',
     subtitle: '30'
   },
@@ -25,18 +37,6 @@ const list = [
   {
     title: 'Weight',
     subtitle: '130 lbs'
-  },
-  {
-    title: 'Location',
-    subtitle: 'AEDR'
-  },
-  {
-    title: 'Activities Preferences',
-    subtitle: 'Ping Pong, Hiking, + 2 Others'
-  },
-  {
-    title: 'Connect Preferences',
-    subtitle: 'Coffee Chat, Sports, + 3 Others'
   }
 ]
 export default class ProfilePage extends React.Component {

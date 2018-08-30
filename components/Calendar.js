@@ -107,7 +107,7 @@ export default class Calender extends React.Component {
           </View>
           <Divider style={{ backgroundColor: 'gray' }} />
           <View style={styles.activity}>
-            <Text style={{ fontSize: 16, color: "gray", paddingBottom: 5 }}>Phoenix Campus SOccer</Text>
+            <Text style={{ fontSize: 16, color: "gray", paddingBottom: 5 }}>Phoenix Campus Soccer</Text>
             <Text style={{ fontSize: 19, paddingBottom: 5 }}>Friday 6v6</Text>
             <Text style={{ fontSize: 16, color: "gray", paddingBottom: 15 }}>5:00 PM - Tempe Beach Park</Text>
               <View style={{flexDirection: 'row'}}>
