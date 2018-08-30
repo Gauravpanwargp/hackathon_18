@@ -4,6 +4,8 @@ import { Icon } from 'react-native-elements'
 import MainPage from '../components/MainPage'
 import ExecrisePage from '../components/ExecrisePage'
 import ChatPage from '../components/ChatPage'
+import ProfilePage from '../components/ProfilePage'
+
 
 export const Tabs = createBottomTabNavigator({
   Home: {
@@ -37,6 +39,18 @@ export const Tabs = createBottomTabNavigator({
       tabBarIcon: ({ tintColor }) => (
         <Icon
           name='chat'
+          size={30}
+        />
+      )
+    }
+  },
+  Profile: {
+    screen: ProfilePage,
+    navigationOptions: {
+      tabBarLabel: 'Profile',
+      tabBarIcon: ({ tintColor }) => (
+        <Icon
+          name='person'
           size={30}
         />
       )
