@@ -4,13 +4,13 @@ Below you'll find information about performing common tasks. The most recent ver
 
 ## TODO
 
-- [ ] App home page
-- [ ] Chat
-- [ ] Activities/Exercise
+- [x] App home page
+- [x] Chat
+- [x] Activities/Exercise
 - [x] App name
-- [ ] Dashboard
+- [x] Dashboard
     - [ ] Leadership index
-- [ ] Presentation
+- [x] Presentation
 
 ## Common issues/steps
 
