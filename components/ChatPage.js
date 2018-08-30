@@ -91,23 +91,23 @@ export default class ChatPage extends React.Component {
 }
 
 //CARD CONTENT
-const colleagueCardTitle = 'Connect with a Colleague';
+const colleagueCardTitle = '    Connect with a Colleague';
 const colleagueCardDescription = 'Meeting new people is great! This option is best for casual discussions or a quick cup of coffee.';
-const mentorCardTitle = 'Connect with a Mentor';
+const mentorCardTitle = '    Connect with a Mentor';
 const mentorCardDescription = 'Need a little career guidance? This option is best for career discussions with leadership from anywhere in the company.';
-const counselorCardTitle = 'Counselling Services';
+const counselorCardTitle = '    Counselling Services';
 const counselorCardDescription = 'Take advantage of Amex\'s onsite and telephonic counseling benefits - completely free and, of course, confidential.';
-const ethicsCardTitle = 'Ethics Experts Hotline';
+const ethicsCardTitle = '    Ethics Experts Hotline';
 const ethicsCardDescription = 'Unsure of what to do about a work situation or need to call something out? Connect anonymously to get the guidance you need.';
-const wellnessCardTitle = 'Wellness Coach Hotline';
+const wellnessCardTitle = '    Wellness Coach Hotline';
 const wellnessCardDescription = 'Celebrate Healthy Lifestyles! Connect to a Wellness Coach, for free, to get an assessment of your current habits and lifestyle!';
 
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingLeft: 10,
-    paddingRight: 10,
+    paddingLeft: 0,
+    paddingRight: 5,
   },
   paragraph: {
 	margin: 16,
@@ -157,9 +157,6 @@ const personalItems = [{
   }, {
     id: '14',
     name: 'Games - D&D',
-  }, {
-    id: '16',
-    name: 'Cars',
   }];
 
   const professionalItems = [{

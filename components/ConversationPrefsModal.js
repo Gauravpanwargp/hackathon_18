@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, Alert, Modal } from 'react-native';
-import {Button} from 'react-native-elements';
+import {Button, Divider, CheckBox} from 'react-native-elements';
 import MultiSelect from 'react-native-multiple-select';
+
+import AppHeader from './AppHeader'
 
 export default class ConversationPrefsModal extends React.Component {
   //properties:
@@ -12,7 +14,9 @@ export default class ConversationPrefsModal extends React.Component {
         this.closeAction = this.props.closeAction.bind(this);
         this.confirmAction = this.props.confirmAction.bind(this);
 	      this.state = {
-	        selectedItems: []
+	        selectedItems: [],
+          checked: false,
+          checked2: false
       };
 }
   onSelectedItemsChange = selectedItems => {
@@ -22,41 +26,53 @@ export default class ConversationPrefsModal extends React.Component {
 
   render() {
    return (
-
       <Modal
           animationType="slide"
           transparent={false}
           visible={this.props.showModal}
           onRequestClose={() => this.closeAction()}>
           <View>
-              <Text>     </Text>
 
-                         <MultiSelect
-			                hideTags
-			                items={this.props.itemList}
-			                uniqueKey="id"
-			                ref={(component) => { this.multiSelect = component }}
-			                onSelectedItemsChange={this.onSelectedItemsChange}
-			                selectedItems={this.state.selectedItems}
-			                selectText="Pick Items"
-			                searchInputPlaceholderText="Search Items..."
-			                onChangeInput={ (text)=> console.log(text)}
-			                tagRemoveIconColor="#CCC"
-			                tagBorderColor="#CCC"
-			                tagTextColor="#CCC"
-			                selectedItemTextColor="#CCC"
-			                selectedItemIconColor="#CCC"
-			                itemTextColor="#000"
-			                displayKey="name"
-			                searchInputStyle={{ color: '#CCC' }}
-			                submitButtonColor="#CCC"
-			                submitButtonText="Submit"
+          <AppHeader title={'CONNECT PREFERENCES'} />
+          <View style={{height:475}}>
+          <MultiSelect
+            items={this.props.itemList}
+            uniqueKey="id"
+            ref={(component) => { this.multiSelect = component }}
+            onSelectedItemsChange={this.onSelectedItemsChange}
+            selectedItems={this.state.selectedItems}
+            selectText="Pick Topics"
+            searchInputPlaceholderText="Search Topics..."
+            onChangeInput={ (text)=> console.log(text)}
+            tagRemoveIconColor="#CCC"
+            tagBorderColor="#CCC"
+            tagTextColor="#CCC"
+            selectedItemTextColor="#CCC"
+            selectedItemIconColor="#CCC"
+            itemTextColor="#000"
+            displayKey="name"
+            searchInputStyle={{ color: '#CCC' }}
+            submitButtonColor="#CCC"
+            submitButtonText="Save"
             />
-              <Button
-              onPress={() => this.confirmAction()}
-              backgroundColor='#03A9F4'
-              buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-              title='Confirm'/>
+            </View>
+            <Divider style={{ backgroundColor: 'gray' }}/>
+            <Text style={{fontSize: 16, color:'gray', paddingBottom: 5}}>Location Preferences:</Text>
+            <CheckBox
+              title='My Location - AEDR'
+              checked={this.state.checked}
+              onPress={() => this.setState({checked: !this.state.checked})}
+              />
+            <CheckBox
+              title='Virtual'
+              checked={this.state.checked2}
+              onPress={() => this.setState({checked2: !this.state.checked2})}
+              />
+            <Button
+            onPress={() => this.confirmAction()}
+            backgroundColor='#03A9F4'
+            buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+            title='Confirm'/>
           </View>
         </Modal>
    );

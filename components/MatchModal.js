@@ -21,7 +21,7 @@ export default class MatchModal extends React.Component {
           visible={this.props.showModal}
           onRequestClose={() => this.closeAction()}>
           <View style={{marginTop: 22, height: 500}}>
-              <Text>Here are your best matches. Please pick who you would like to connect with.</Text>
+              <Text style={{ fontSize: 19, paddingBottom: 5, textAlignVertical:"center" }}>Here are your best matches -</Text>
               <List containerStyle={{marginBottom: 20}}>
               {
                 this.props.matchList.map((l) => (

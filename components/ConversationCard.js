@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image, Alert } from 'react-native';
-import {Button, Card} from 'react-native-elements';
+import { Text, View, StyleSheet, Image, Alert, TouchableOpacity } from 'react-native';
+import {Button, Card, Icon} from 'react-native-elements';
+
 
 
 export default class ConversationCard extends React.Component {
@@ -24,7 +25,7 @@ export default class ConversationCard extends React.Component {
        onPress={() => this.handleButtonEvent()}
        />
      </Card>*/
-
+     <TouchableOpacity onPress={() => this.handleButtonEvent()}>
      <Card>
        <View style={{flexDirection: 'row'}}>
          <Image
@@ -32,11 +33,12 @@ export default class ConversationCard extends React.Component {
            source={this.props.image}
          />
          <Text style={{ fontSize: 19, paddingBottom: 5, textAlign:"right", textAlignVertical:"center" }}>{this.props.title}</Text>
+         <Icon name="chevron-right" />
        </View>
        <Text>                             </Text>
        <Text style={{fontSize: 16, color:'gray', paddingBottom: 5}}>{this.props.text}</Text>
      </Card>
-
+     </TouchableOpacity>
      //</View>
    );
  }
